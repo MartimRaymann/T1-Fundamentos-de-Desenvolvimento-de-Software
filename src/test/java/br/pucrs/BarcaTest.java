@@ -8,8 +8,7 @@ public class BarcaTest {
 
     private Barca barca;
 
-    // O @BeforeEach faz com que o JUnit crie uma Barca nova e zerada ANTES de cada teste rodar.
-    // Assim, um teste não suja os assentos do outro!
+    // O @BeforeEach renicia a Barca
     @BeforeEach
     public void setUp() {
         barca = new Barca();
@@ -18,7 +17,6 @@ public class BarcaTest {
     // CT-01: Formato inválido (falta dígito)
     @Test
     public void testCT01_FormatoInvalidoFaltaDigito() {
-        // Espera receber 0 ao passar "F01A1"
         assertEquals(0, barca.ocupaLugar("F01A1")); 
     }
 
