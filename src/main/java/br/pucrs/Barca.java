@@ -20,19 +20,19 @@ public class Barca {
     /* * Retorna: 
      * 0 – Identificador de assento inválido 
      * 1 – Assento ocupado 
-     * 2 – Assento bloqueado devido a distribuição de peso 
-     * 3 – Ok, assento atribuído ao passageiro. 
+     * 2 – Assento bloqueado
+     * 3 – Ok
      */ 
 
     public int ocupaLugar(String assentoInformado) { 
         
         // VALIDAÇÃO DA STRING (Retorna 0)
-        // Verifica se a string é nula ou se não tem exatamente 6 caracteres
+        // Verifica se a string é nula ou se não tem exatamente 6 caracteres.
         if (assentoInformado == null || assentoInformado.length() != 6) {
             return 0;
         }
 
-        // Verifica se as posições fixas 'F' e 'A' estão corretas
+        // Verifica se as posições fixas 'F' e 'A' estão corretas.
         if (assentoInformado.charAt(0) != 'F' || assentoInformado.charAt(3) != 'A') {
             return 0;
         }
@@ -55,7 +55,7 @@ public class Barca {
         }
 
         // Ajuste para a Matriz:
-        // Fila 1 é o índice 0,  Fila 60 é o índice 59.
+        // Fila 1 é o índice 0, Fila 60 é o índice 59.
         int indiceFila = fila - 1;
         int indiceAssento = assento - 1;
 
