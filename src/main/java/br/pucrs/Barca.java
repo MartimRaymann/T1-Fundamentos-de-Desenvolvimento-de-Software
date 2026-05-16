@@ -86,4 +86,33 @@ public class Barca {
         
         return 3;
     }
+
+    // Exemplo de Uso 
+    public static void main(String[] args) {
+        Barca barcaTerminal = new Barca();
+
+        System.out.println("--- Sistema de Barca iniciado ---");
+        
+        // 1: Compra válida.
+        System.out.println("\nCliente 1 pegou o assento F05A10...");
+        int status1 = barcaTerminal.ocupaLugar("F05A10");
+        System.out.println("Status retornado: " + status1 + " (Passagem vendida.)");
+
+        // 2: Compra inválida, assento já ocupado.
+        System.out.println("\nCliente 2 pegou o assento F05A10...");
+        int status2 = barcaTerminal.ocupaLugar("F05A10");
+        System.out.println("Status retornado: " + status2 + " (Venda bloqueada, assento já ocupado.)");
+
+        // 3: Formato inválido
+        System.out.println("\nFoi digitado FXXA01...");
+        int status3 = barcaTerminal.ocupaLugar("FXXA01");
+        System.out.println("Status retornado: " + status3 + " (Formato inválido de passagem)");
+
+        // 4: Bloqueado por causo do peso
+        System.out.println("\nCliente 3 pegou o assento F25A01...");
+        int status4 = barcaTerminal.ocupaLugar("F25A01");
+        System.out.println("Status retornado: " + status4 + " (Venda bloqueada devido ao sistema de peso)");
+        
+        System.out.println("\n--- Encerrando Sistema ---");
+    }
 }
